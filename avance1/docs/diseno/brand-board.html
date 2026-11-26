@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand board — USFQ Reserva COCOA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-rojo-usfq: #ED1C24; --color-rojo: #C41B1E; --color-rojo-oscuro: #9E1418; --color-rojo-suave: #FDE8E8;
+  --color-negro: #000000; --color-texto: #1A1A1A; --color-gris: #757575; --color-gris-claro: #EEEEEE;
+  --color-borde: #E0E0E0; --color-blanco: #FFFFFF;
+  --estado-espera-texto: #7A4500;      --estado-espera-fondo: #FFF0D1;
+  --estado-aprobada-texto: #1E6B3A;    --estado-aprobada-fondo: #E2F2E7;
+  --estado-rechazada-texto: #9B1C1C;   --estado-rechazada-fondo: #FBE3E3;
+  --estado-cancelada-texto: #4A4744;   --estado-cancelada-fondo: #ECE9E4;
+  --estado-noretirada-texto: #5A5650;  --estado-noretirada-fondo: #F1EEE9;
+  --estado-encurso-texto: #1D4E89;     --estado-encurso-fondo: #E1EBF7;
+  --estado-atrasada-texto: #9A3412;    --estado-atrasada-fondo: #FDE6D8;
+  --estado-finalizada-texto: #2E5266;  --estado-finalizada-fondo: #E3ECF1;
+  --estado-conflicto-texto: #6B2C91;   --estado-conflicto-fondo: #F0E5F7;
+  --unidad-disponible: #16803D; --unidad-ocupado: #C41B1E; --unidad-mantenimiento: #757575;
+  --fuente-titulos: "Nexa", "Montserrat", system-ui, sans-serif;
+  --fuente-texto: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --esp-2: 8px; --esp-3: 12px; --esp-4: 16px; --esp-5: 24px; --esp-6: 32px; --esp-7: 48px;
+  --radio-s: 8px; --radio-m: 12px; --radio-l: 16px; --radio-pill: 999px;
+  --sombra-1: 0 1px 3px rgb(0 0 0 / .08); --sombra-2: 0 6px 20px rgb(0 0 0 / .16);
+  --anillo-foco: 0 0 0 2px var(--color-blanco), 0 0 0 4px var(--color-texto);
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body { margin: 0; background: var(--color-blanco); color: var(--color-texto); font: 400 1rem/1.5rem var(--fuente-texto); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+.num { font-variant-numeric: tabular-nums; }
+h1, h2, h3 { font-family: var(--fuente-titulos); margin: 0; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: var(--esp-6) var(--esp-4) var(--esp-7); }
+.mini { font: 500 .75rem/1rem var(--fuente-texto); letter-spacing: .04em; text-transform: uppercase; color: #555; }
+.small { font: 500 .875rem/1.25rem var(--fuente-texto); }
+.muted { color: #555; }
+.wrap, .card, .sw, .eq { min-width: 0; }
+.hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--esp-6); align-items: end; padding-bottom: var(--esp-6); border-bottom: 1px solid var(--color-borde); }
+.tag { display: inline-block; background: var(--color-rojo); color: #fff; font: 700 1.125rem/1 var(--fuente-titulos); letter-spacing: .06em; padding: 8px 14px; border-radius: 4px; }
+.hero h1 { font-size: clamp(2.25rem, 7vw, 4rem); line-height: .95; font-weight: 800; text-transform: uppercase; margin-top: var(--esp-4); color: var(--color-negro); }
+.bar { width: 56px; height: 5px; background: var(--color-rojo-usfq); border-radius: 3px; margin: var(--esp-4) 0; }
+.hero p { margin: 0; font-size: 1.125rem; line-height: 1.6rem; max-width: 44ch; }
+.kw { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--esp-2); }
+.kw div { background: var(--color-gris-claro); border-radius: var(--radio-m); padding: var(--esp-4); }
+.kw strong { display: block; font: 800 1.25rem/1.5rem var(--fuente-titulos); margin-top: 4px; }
+section { margin-top: var(--esp-7); }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--esp-3); margin-bottom: var(--esp-5); }
+.sec-head h2 { font-size: 1.375rem; line-height: 1.75rem; text-transform: uppercase; letter-spacing: .02em; }
+.sec-head .n { font: 800 .875rem/1 var(--fuente-titulos); background: var(--color-rojo); color: #fff; padding: 5px 9px; border-radius: 999px; }
+.grid { display: grid; gap: var(--esp-4); }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card { background: #fff; border: 1px solid var(--color-borde); border-radius: var(--radio-l); box-shadow: var(--sombra-1); padding: var(--esp-4); }
+.note { background: var(--color-gris-claro); border-radius: var(--radio-m); padding: var(--esp-3) var(--esp-4); font: 400 .9375rem/1.4rem var(--fuente-texto); }
+.sw { border-radius: var(--radio-l); overflow: hidden; border: 1px solid var(--color-borde); background: #fff; }
+.sw .chip { height: 84px; display: flex; align-items: flex-end; padding: var(--esp-3); font: 700 1rem/1 var(--fuente-texto); }
+.sw .meta { padding: var(--esp-3); }
+.sw .meta b { display: block; }
+.sw code { font: 500 .8125rem/1.3 ui-monospace, Menlo, monospace; color: #555; overflow-wrap: anywhere; }
+.type-row { display: grid; grid-template-columns: 130px 1fr; gap: var(--esp-4); align-items: baseline; padding: var(--esp-3) 0; border-bottom: 1px solid var(--color-borde); }
+.type-row:last-child { border-bottom: 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: var(--radio-m); font: 700 1rem/1 var(--fuente-texto); border: 1.5px solid transparent; cursor: pointer; width: 100%; }
+.btn-p { background: var(--color-rojo); color: #fff; }
+.btn-p.is-hover { background: var(--color-rojo-oscuro); }
+.btn-p.is-focus { box-shadow: var(--anillo-foco); }
+.btn-p[disabled] { background: var(--color-gris-claro); color: #555; cursor: not-allowed; }
+.btn-s { background: #fff; color: var(--color-rojo); border-color: var(--color-rojo); }
+.btn-d { background: #fff; color: var(--estado-rechazada-texto); border-color: var(--estado-rechazada-texto); }
+.btn svg { width: 18px; height: 18px; }
+.spin { width: 16px; height: 16px; border: 2px solid rgb(255 255 255 / .4); border-top-color: #fff; border-radius: 50%; animation: s .9s linear infinite; }
+@keyframes s { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+.btn-grid { display: grid; grid-template-columns: minmax(0, 1fr) 110px; gap: var(--esp-3); align-items: center; }
+.field { display: grid; gap: 6px; }
+.input { height: 48px; border: 1px solid var(--color-borde); border-radius: var(--radio-m); background: #fff; padding: 0 14px; font: 400 1rem/1 var(--fuente-texto); color: var(--color-texto); display: flex; align-items: center; gap: 10px; width: 100%; }
+.input svg { width: 18px; height: 18px; flex: none; }
+.input .ph { color: #555; }
+.input.is-focus { border-color: var(--color-texto); }
+.input.is-error { border-color: var(--estado-rechazada-texto); }
+.err { display: flex; gap: 6px; align-items: center; color: var(--estado-rechazada-texto); font: 500 .875rem/1.25rem var(--fuente-texto); }
+.search { height: 44px; border-radius: 999px; background: var(--color-gris-claro); display: flex; align-items: center; gap: 8px; padding: 0 16px; color: #555; }
+.datefila { height: 52px; border: 1px solid var(--color-borde); border-radius: var(--radio-m); display: flex; align-items: center; gap: 12px; padding: 0 14px; font-weight: 500; }
+.datefila svg { width: 20px; height: 20px; color: var(--color-rojo-usfq); }
+.datefila .chev { margin-left: auto; }
+.tabs { display: flex; background: var(--color-gris-claro); border-radius: 999px; padding: 4px; gap: 4px; }
+.tabs span { flex: 1; text-align: center; padding: 8px 10px; border-radius: 999px; font: 500 .875rem/1 var(--fuente-texto); }
+.tabs span.on { background: var(--color-rojo); color: #fff; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chips span { padding: 8px 14px; border-radius: 999px; background: var(--color-gris-claro); font: 500 .875rem/1 var(--fuente-texto); }
+.chips span.on { background: var(--color-rojo); color: #fff; }
+.lang { display: inline-flex; background: var(--color-gris-claro); border-radius: 999px; padding: 3px; justify-self: start; }
+.lang span { padding: 6px 12px; border-radius: 999px; font: 700 .75rem/1 var(--fuente-texto); }
+.lang span.on { background: var(--color-rojo); color: #fff; }
+.eq { background: #fff; border: 1px solid var(--color-borde); border-radius: var(--radio-l); box-shadow: var(--sombra-1); overflow: hidden; }
+.eq-photo { aspect-ratio: 4 / 3; background: #fff; display: grid; place-items: center; }
+.eq-photo svg { width: 58%; color: var(--color-texto); }
+.eq-body { padding: 0 var(--esp-3) var(--esp-3); display: grid; gap: 6px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 999px; font: 500 .75rem/1 var(--fuente-texto); color: #fff; justify-self: start; }
+.pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; }
+.p-disp { background: var(--unidad-disponible); }
+.eq h3 { font: 700 1rem/1.375rem var(--fuente-texto); }
+.units { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.u { min-height: 56px; border-radius: var(--radio-s); border: 2px solid; display: grid; place-items: center; align-content: center; gap: 3px; background: #fff; }
+.u b { font: 700 1.25rem/1 var(--fuente-texto); }
+.u small { font: 500 .6875rem/1 var(--fuente-texto); }
+.u-disp { border-color: var(--unidad-disponible); color: var(--unidad-disponible); }
+.u-ocup { border-color: var(--unidad-ocupado); color: var(--unidad-ocupado); }
+.u-mant { border-color: var(--unidad-mantenimiento); color: var(--unidad-mantenimiento); }
+.u-sel { background: var(--unidad-disponible); border-color: var(--unidad-disponible); color: #fff; }
+.badge { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px 0 10px; border-radius: var(--radio-pill); font: 500 .875rem/1 var(--fuente-texto); white-space: nowrap; }
+.badge svg { width: 16px; height: 16px; flex: none; }
+.b-espera { color: var(--estado-espera-texto); background: var(--estado-espera-fondo); }
+.b-aprobada { color: var(--estado-aprobada-texto); background: var(--estado-aprobada-fondo); }
+.b-rechazada { color: var(--estado-rechazada-texto); background: var(--estado-rechazada-fondo); }
+.b-cancelada { color: var(--estado-cancelada-texto); background: var(--estado-cancelada-fondo); }
+.b-noretirada { color: var(--estado-noretirada-texto); background: var(--estado-noretirada-fondo); }
+.b-encurso { color: var(--estado-encurso-texto); background: var(--estado-encurso-fondo); }
+.b-atrasada { color: var(--estado-atrasada-texto); background: var(--estado-atrasada-fondo); }
+.b-finalizada { color: var(--estado-finalizada-texto); background: var(--estado-finalizada-fondo); }
+.b-conflicto { color: var(--estado-conflicto-texto); background: var(--estado-conflicto-fondo); }
+.state-row { display: grid; grid-template-columns: 140px 1fr 56px; gap: var(--esp-3); align-items: center; padding: var(--esp-3) 0; border-bottom: 1px solid var(--color-borde); }
+.state-row:last-child { border-bottom: 0; }
+.tabgroup { font: 700 .8125rem/1 var(--fuente-texto); text-transform: uppercase; letter-spacing: .04em; color: var(--color-rojo); padding-top: var(--esp-3); }
+.res { display: flex; justify-content: space-between; align-items: center; gap: 10px; border: 1px solid var(--color-borde); border-radius: var(--radio-m); padding: 12px 14px; }
+.screens { border-radius: var(--radio-l); overflow: hidden; border: 1px solid var(--color-borde); background: #F6F6F6; }
+.st { display: grid; gap: 10px; align-content: start; }
+.skel { height: 14px; border-radius: 6px; background: var(--color-gris-claro); }
+.msg { border-radius: var(--radio-m); padding: 10px 12px; font: 500 .875rem/1.25rem var(--fuente-texto); display: flex; gap: 10px; align-items: flex-start; }
+.msg svg { width: 20px; height: 20px; flex: none; }
+.voice { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--color-borde); border-radius: var(--radio-l); overflow: hidden; }
+.voice > div { padding: 12px 16px; border-bottom: 1px solid var(--color-borde); }
+.voice .hd { font: 800 .875rem/1 var(--fuente-titulos); text-transform: uppercase; letter-spacing: .04em; }
+.voice .yes { border-right: 1px solid var(--color-borde); }
+.voice .hd.yes { background: var(--estado-aprobada-fondo); color: var(--estado-aprobada-texto); }
+.voice .hd.no { background: var(--estado-rechazada-fondo); color: var(--estado-rechazada-texto); }
+.voice > div:nth-last-child(-n+2) { border-bottom: 0; }
+.voice .no:not(.hd) { color: #555; }
+footer { margin-top: var(--esp-7); padding-top: var(--esp-4); border-top: 1px solid var(--color-borde); }
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .g2 { grid-template-columns: 1fr; }
+  .kw strong { font-size: 1rem; }
+  .state-row { grid-template-columns: 1fr; gap: 6px; }
+  .type-row { grid-template-columns: 1fr; gap: 4px; }
+  .voice { grid-template-columns: 1fr; }
+  .voice .yes { border-right: 0; }
+  .voice > div:nth-last-child(-n+2) { border-bottom: 1px solid var(--color-borde); }
+  .btn-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arena" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></symbol>
+  <symbol id="i-relojx" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5M4 4l16 16"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2L12 3z"/><path d="M12 10v4M12 17.5v.01"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20H4v-6M4 20l9-9M6 10V5a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-5"/></symbol>
+  <symbol id="i-conf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="4" width="12" height="10" rx="1.5"/><rect x="9" y="10" width="12" height="10" rx="1.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.5 11h11L21 8H6.5"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><rect x="4" y="12" width="40" height="30" rx="4"/><circle cx="24" cy="27" r="9"/><circle cx="24" cy="27" r="4"/><path d="M44 22l16-8v26l-16-8z"/><rect x="10" y="6" width="12" height="6" rx="1"/></symbol>
+</svg>
+
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <span class="tag">USFQ</span>
+    <h1>Reserva<br>COCOA</h1>
+    <div class="bar" aria-hidden="true"></div>
+    <p>Plataforma de reserva de equipos y espacios audiovisuales del COCOA.</p>
+    <p class="small muted" style="margin-top:12px">Concepto «Directo al set»: reservar es elegir la fecha, escoger el equipo y mandar la solicitud. Nada más.</p>
+  </div>
+  <div>
+    <div class="mini" style="margin-bottom:8px">Palabras clave</div>
+    <div class="kw"><div><span class="mini">01</span><strong>Claro</strong></div><div><span class="mini">02</span><strong>Rápido</strong></div><div><span class="mini">03</span><strong>Confiable</strong></div></div>
+    <p class="small muted" style="margin-top:12px">Brand board v2 · 25 nov 2026 · Celular primero · Español por defecto, inglés con un botón</p>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="n">01</span><h2>Paleta de color</h2><span class="small muted">Sacada del logo USFQ · falta confirmar con el manual de marca (P-42)</span></div>
+  <div class="grid g3">
+    <div class="sw"><div class="chip" style="background:#ED1C24;color:#fff;font-size:1.5rem">Aa · 4.38:1</div><div class="meta"><b>Rojo USFQ</b><code>#ED1C24 · --color-rojo-usfq</code><div class="small muted">Logo, íconos activos y títulos grandes. Nunca texto blanco chico encima.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#C41B1E;color:#fff">Aa 5.96:1</div><div class="meta"><b>Rojo botón</b><code>#C41B1E · --color-rojo</code><div class="small muted">Botones, pestaña activa, contador del carrito y Ocupado.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#000000;color:#fff">Aa 21:1</div><div class="meta"><b>Negro</b><code>#000000 · --color-negro</code><div class="small muted">Títulos grandes como «RESERVA COCOA».</div></div></div>
+    <div class="sw"><div class="chip" style="background:#1A1A1A;color:#fff">Aa 17.4:1</div><div class="meta"><b>Casi negro</b><code>#1A1A1A · --color-texto</code><div class="small muted">Texto normal, nombres de equipos e íconos.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#EEEEEE;color:#1A1A1A">Aa 15.0:1</div><div class="meta"><b>Gris claro</b><code>#EEEEEE · --color-gris-claro</code><div class="small muted">Pestañas, chips y cajas de información. El texto encima siempre va en #1A1A1A.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FFFFFF;color:#1A1A1A;border-bottom:1px solid #E0E0E0">Aa 17.4:1</div><div class="meta"><b>Blanco</b><code>#FFFFFF · --color-blanco</code><div class="small muted">Fondo de la página y de las tarjetas.</div></div></div>
+  </div>
+  <div class="mini" style="margin:24px 0 10px">Estados de una unidad</div>
+  <div class="grid g3">
+    <div class="sw"><div class="chip" style="background:#16803D;color:#fff">Aa 5.01:1</div><div class="meta"><b>Disponible</b><code>#16803D · --unidad-disponible</code></div></div>
+    <div class="sw"><div class="chip" style="background:#C41B1E;color:#fff">Aa 5.96:1</div><div class="meta"><b>Ocupado</b><code>#C41B1E · --unidad-ocupado</code></div></div>
+    <div class="sw"><div class="chip" style="background:#757575;color:#fff">Aa 4.61:1</div><div class="meta"><b>Mantenimiento</b><code>#757575 · --unidad-mantenimiento</code><div class="small muted">También es el gris del texto secundario, solo sobre blanco.</div></div></div>
+  </div>
+  <p class="note" style="margin-top:16px">Regla de contraste: estos tres colores van de fondo sólido con texto blanco, o como texto y borde sobre blanco. Nunca sobre un fondo verde, rosado o gris claro, porque el verde y el gris bajan de 4.5:1.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">02</span><h2>Tipografía</h2><span class="small muted">Nexa para títulos (aquí se ve Montserrat, su reemplazo gratis) · Roboto para textos</span></div>
+  <div class="grid g2">
+    <div class="card">
+      <div class="type-row"><span class="mini">Marca 32/34</span><span style="font:800 2rem/2.125rem var(--fuente-titulos);text-transform:uppercase">Reserva COCOA</span></div>
+      <div class="type-row"><span class="mini">H1 24/30</span><span style="font:700 1.5rem/1.875rem var(--fuente-titulos)">¿Qué necesitas reservar?</span></div>
+      <div class="type-row"><span class="mini">H2 20/26</span><span style="font:700 1.25rem/1.625rem var(--fuente-titulos)">Cámara Sony FX6</span></div>
+      <div class="type-row"><span class="mini">H3 16/22</span><span style="font:700 1rem/1.375rem var(--fuente-texto)">#R-10458</span></div>
+      <div class="type-row"><span class="mini">Cuerpo 16/24</span><span>Hemos recibido tu solicitud.</span></div>
+      <div class="type-row"><span class="mini">Pequeño 14/20</span><span class="small num">15 – 17 nov 2026 · 3 artículos</span></div>
+      <div class="type-row"><span class="mini">Mini 12/16</span><span style="font:500 .75rem/1rem var(--fuente-texto)">Acceso exclusivo con correo institucional</span></div>
+    </div>
+    <div class="card" style="display:grid;gap:18px;align-content:start">
+      <div><div class="mini">Nexa / Montserrat 800</div><div style="font:800 3.25rem/1 var(--fuente-titulos)">Aa Ññ</div></div>
+      <div><div class="mini">Roboto 400 / 700</div><div style="font:400 2.25rem/1.2 var(--fuente-texto)">Aa Ññ <b style="font-weight:700">0–9</b></div></div>
+      <div class="small muted">Horas siempre en 24 h y con números del mismo ancho:</div>
+      <div class="num" style="font:700 1.5rem/1.35 var(--fuente-texto)">08:30<br>10:00–12:30<br>17:00</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">03</span><h2>Componentes</h2></div>
+  <div class="grid g3">
+    <div class="card">
+      <div class="mini" style="margin-bottom:12px">Botones · 48 px · radio 12</div>
+      <div class="btn-grid">
+        <button class="btn btn-p" type="button">Iniciar sesión</button><span class="small muted">Principal</span>
+        <button class="btn btn-p is-hover" type="button">Iniciar sesión</button><span class="small muted">Presionado</span>
+        <button class="btn btn-p is-focus" type="button">Iniciar sesión</button><span class="small muted">Foco</span>
+        <button class="btn btn-p" type="button" aria-busy="true"><span class="spin" aria-hidden="true"></span>Enviando…</button><span class="small muted">Cargando</span>
+        <button class="btn btn-p" type="button" disabled>Agregar al carrito</button><span class="small muted">Desactivado: «Selecciona una unidad»</span>
+        <button class="btn btn-s" type="button">Ver mis reservas</button><span class="small muted">Secundario</span>
+        <button class="btn btn-d" type="button">Cancelar reserva</button><span class="small muted">Peligro (pide confirmar)</span>
+      </div>
+    </div>
+    <div class="card" style="display:grid;gap:14px;align-content:start">
+      <div class="mini">Campos y controles</div>
+      <div class="input is-focus"><svg aria-hidden="true"><use href="#i-mail"/></svg>jperez@usfq.edu.ec</div>
+      <div class="field"><div class="input is-error"><svg aria-hidden="true"><use href="#i-mail"/></svg>jperez@gmail.com</div><div class="err"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Usa tu correo de la USFQ.</div></div>
+      <div class="input"><svg aria-hidden="true"><use href="#i-lock"/></svg><span class="ph">Contraseña</span></div>
+      <div class="datefila"><svg aria-hidden="true"><use href="#i-cal"/></svg>Selecciona la fecha<span class="chev">›</span></div>
+      <div class="search"><svg width="18" height="18" aria-hidden="true"><use href="#i-search"/></svg>Buscar equipo…</div>
+      <div class="tabs"><span class="on">Productos</span><span>Kits</span></div>
+      <div class="chips"><span class="on">Todo</span><span>Cámaras</span><span>Lentes</span><span>Audio</span></div>
+      <div class="lang"><span class="on">ES</span><span>EN</span></div>
+    </div>
+    <div style="display:grid;gap:16px;align-content:start">
+      <article class="eq" aria-label="Tarjeta de equipo">
+        <div class="eq-photo"><svg aria-hidden="true"><use href="#i-cam"/></svg></div>
+        <div class="eq-body"><span class="pill p-disp">Disponible</span><h3>Cámara Sony FX6</h3></div>
+      </article>
+      <div class="card">
+        <div class="small" style="font-weight:700;margin-bottom:8px">Selecciona una unidad</div>
+        <div class="units num">
+          <div class="u u-sel"><b>1</b><small>Elegida</small></div>
+          <div class="u u-ocup"><b>2</b><small>Ocupado</small></div>
+          <div class="u u-disp"><b>3</b><small>Disponible</small></div>
+          <div class="u u-mant"><b>4</b><small>Manten.</small></div>
+        </div>
+        <button class="btn btn-p" type="button" style="margin-top:14px"><svg aria-hidden="true"><use href="#i-cart"/></svg>Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">04</span><h2>Estados de una reserva</h2><span class="small muted">RN-35 y RN-36 del PRD · texto + ícono + color</span></div>
+  <div class="grid g2">
+    <div class="card">
+      <div class="tabgroup">Futuras</div>
+      <div class="state-row"><span class="badge b-espera"><svg aria-hidden="true"><use href="#i-arena"/></svg>En espera</span><span class="small">Tu reserva está en espera de aprobación.</span><span class="small muted num">6.96:1</span></div>
+      <div class="state-row"><span class="badge b-aprobada"><svg aria-hidden="true"><use href="#i-check"/></svg>Aprobada</span><span class="small">Retira en bodega COCOA el mié 2 dic desde las 10:00.</span><span class="small muted num">5.62:1</span></div>
+      <div class="tabgroup">En curso</div>
+      <div class="state-row"><span class="badge b-encurso"><svg aria-hidden="true"><use href="#i-out"/></svg>En curso</span><span class="small">Devuélvelo hasta las 17:00 de hoy.</span><span class="small muted num">6.96:1</span></div>
+      <div class="state-row"><span class="badge b-atrasada"><svg aria-hidden="true"><use href="#i-alert"/></svg>Atrasada</span><span class="small">Ya pasó la hora de devolución. Tu cuenta quedará bloqueada 14 días.</span><span class="small muted num">6.08:1</span></div>
+      <div class="tabgroup">Solo administrador</div>
+      <div class="state-row"><span class="badge b-conflicto"><svg aria-hidden="true"><use href="#i-conf"/></svg>Conflicto</span><span class="small">Choca con #R-10439, enviada antes.</span><span class="small muted num">7.21:1</span></div>
+    </div>
+    <div class="card">
+      <div class="tabgroup">Pasadas</div>
+      <div class="state-row"><span class="badge b-rechazada"><svg aria-hidden="true"><use href="#i-x"/></svg>Rechazada</span><span class="small">Tu solicitud no fue aprobada. Puedes buscar otra fecha o equipo.</span><span class="small muted num">6.68:1</span></div>
+      <div class="state-row"><span class="badge b-cancelada"><svg aria-hidden="true"><use href="#i-ban"/></svg>Cancelada</span><span class="small">Cancelaste esta reserva.</span><span class="small muted num">7.62:1</span></div>
+      <div class="state-row"><span class="badge b-noretirada"><svg aria-hidden="true"><use href="#i-relojx"/></svg>No retirada</span><span class="small">No se retiró a tiempo y los equipos se liberaron.</span><span class="small muted num">6.30:1</span></div>
+      <div class="state-row"><span class="badge b-finalizada"><svg aria-hidden="true"><use href="#i-in"/></svg>Finalizada</span><span class="small">Devuelto el mié 2 dic a las 16:40. ¡Gracias!</span><span class="small muted num">6.97:1</span></div>
+      <div style="display:grid;gap:8px;padding-top:14px">
+        <div class="mini">Así se ve en «Mis reservas»</div>
+        <div class="res num"><div><b>#R-10458</b><div class="small muted">15 – 17 nov 2026 · 3 artículos</div></div><span class="badge b-espera"><svg aria-hidden="true"><use href="#i-arena"/></svg>En espera</span></div>
+        <div class="res num"><div><b>#R-10392</b><div class="small muted">21 – 23 nov 2026 · 5 artículos</div></div><span class="badge b-aprobada"><svg aria-hidden="true"><use href="#i-check"/></svg>Aprobada</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">05</span><h2>Pantallas del producto</h2><span class="small muted">Nuestro layout: login, inicio, catálogo, detalle, carrito, en espera, mis reservas y detalle de reserva</span></div>
+  <div class="screens"><img src="pantallas.png" alt="Ocho pantallas de celular de USFQ Reserva COCOA: inicio de sesión con correo institucional, inicio con «Selecciona la fecha», catálogo con pestañas Productos y Kits, detalle de la Cámara Sony FX6 con selección de unidad, carrito con tres equipos, reserva en espera de aprobación, lista de mis reservas y detalle de una reserva aprobada." loading="lazy"></div>
+  <p class="small muted" style="margin-top:10px">En el MVP no van el corazón de favoritos (P-44) ni el comprobante descargable (P-39). El chatbot va solo si alcanza el tiempo (P-17).</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">06</span><h2>Carga, vacío, error y éxito</h2></div>
+  <div class="grid g4">
+    <div class="card st"><div class="mini">Cargando</div><div class="skel" style="height:72px;border-radius:12px"></div><div class="skel" style="width:70%"></div><div class="skel" style="width:45%"></div><div class="small muted">La forma de las tarjetas, en gris.</div></div>
+    <div class="card st"><div class="mini">Vacío</div><div class="small">No hay equipos disponibles el mié 2 dic de 10:00 a 12:00. Prueba con otra hora.</div><button class="btn btn-s" type="button">Cambiar fecha</button></div>
+    <div class="card st"><div class="mini">Error</div><div class="msg" style="color:var(--estado-rechazada-texto);background:var(--estado-rechazada-fondo)"><svg aria-hidden="true"><use href="#i-alert"/></svg>No pudimos cargar el catálogo. Revisa tu conexión e inténtalo otra vez.</div><button class="btn btn-s" type="button">Reintentar</button></div>
+    <div class="card st"><div class="mini">Éxito</div><div class="msg" style="color:var(--estado-aprobada-texto);background:var(--estado-aprobada-fondo)"><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Reserva aprobada</b><br>Tu solicitud ha sido aprobada.</span></div><div class="msg" style="background:var(--color-gris-claro)"><svg aria-hidden="true"><use href="#i-info"/></svg><span><b>Una sola solicitud</b><br>Todos los artículos se enviarán en una única reserva.</span></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">07</span><h2>Tono de voz</h2><span class="small muted">Directas, cercanas y útiles. Tuteamos, decimos qué pasó y qué hacer.</span></div>
+  <div class="voice">
+    <div class="hd yes">Así sí</div><div class="hd no">Así no</div>
+    <div class="yes">Hemos recibido tu solicitud. Te notificaremos por correo institucional cuando sea aprobada o rechazada.</div><div class="no">¡Su solicitud ha sido procesada exitosamente!</div>
+    <div class="yes">Esta unidad está en mantenimiento. Elige otra.</div><div class="no">Error: ítem no disponible (code 409).</div>
+    <div class="yes">Puedes cancelar hasta las 09:00 (1 h antes).</div><div class="no">Las cancelaciones están sujetas a la política vigente.</div>
+    <div class="yes">Tu cuenta está bloqueada hasta el mié 9 dic por una devolución atrasada.</div><div class="no">Usted ha sido penalizado.</div>
+  </div>
+  <p class="small muted" style="margin-top:12px">Palabras fijas: reserva, solicitud, equipo, kit, espacio, artículos, unidad, retirar, devolver, bodega COCOA. Horas en 24 h: <span class="num">08:30–17:00</span>, nunca «8:30 AM». Todo en español o todo en inglés, sin mezclar.</p>
+</section>
+
+<footer class="small muted">
+  La versión en texto para el equipo y el agente está en <code>DESIGN.md</code> (raíz del repositorio). Las reglas de negocio están en <code>docs/prd/prd.md</code>.
+</footer>
+
+</div>
+</body>
+</html>
